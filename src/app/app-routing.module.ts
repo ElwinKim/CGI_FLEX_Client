@@ -6,10 +6,22 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
+  // {
+  //   path: 'login',
+  //   loadChildren: () => import('./login/login.module').then(n=>n.LoginModule)
+  // },
   {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'machinelist',
+    loadChildren: () => import('./machinelist/machinelist.module').then( m => m.MachinelistPageModule)
   },
 ];
 

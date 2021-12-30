@@ -1,0 +1,38 @@
+<ion-content>
+  <div id="header">
+    <img src = "assets/logo.png"/>
+  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" id="form">
+    <ion-item>
+      <ion-input formControlName="userName" type="text" placeholder="Username" [ngModel]="username" required></ion-input>
+    </ion-item>
+    <span *ngIf="loginForm.controls['userName'].invalid && loginForm.controls['userName'].touched &&
+    loginForm.controls['userName'].errors.required" class="alert">
+      <span style="margin-left: 20px; color: red;">
+      Username is required
+      </span>
+    </span>
+    <ion-item>
+      <ion-input formControlName="password" type="password" placeholder="Password" [ngModel]="password"></ion-input>
+    </ion-item>
+    <span *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched &&
+    loginForm.controls['password'].errors.required" class="alert">
+      <span style="margin-left: 20px; color: red;">
+      Password is required
+      </span>
+    </span>
+    <ion-button [disabled]="loginForm.invalid" color="custom" expand="full" type="submit">
+      LOGIN
+     </ion-button>
+     <div style="display: flex;">
+      <div class="remember" style="align-content: left;">
+        <ion-checkbox formControlName="rememberMe" color="primary" slot="start" [ngModel]="checked"></ion-checkbox>
+        <ion-label>Remember Me</ion-label>
+      </div>
+      <div class="forgotPass"style="align-content: right;">
+        <ion-label>Forgot Password?</ion-label>
+      </div>
+    </div>
+
+  </form>
+</ion-content>

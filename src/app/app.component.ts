@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController} from '@ionic/angular';
 import { IpServiceService } from './ip-service.service';
 import {ServerIP} from '../app/shared/models/serverIP.model';
-
+import { Router, RouterModule, Routes } from '@angular/router';
+import { AccountService } from './login/account.service';
 
 @Component({
   selector: 'app-root',
@@ -14,29 +15,42 @@ export class AppComponent implements OnInit{
   ipAddress: string;
   storage: any;
   constructor(private ip: IpServiceService, public alertController: AlertController,
-    public serverIP: ServerIP) {
+    public serverIP: ServerIP, private router: Router, private accountService: AccountService) {
   }
 
   ngOnInit(){
     this.serverIP.ipAddress = localStorage.getItem('IpAddress');
     this.checkServer();
+    this.loadCurrentUser();
+  }
+
+  loadCurrentUser(){
+    const token = localStorage.getItem('token');
+    if(token){
+      this.accountService.loadCurrentUser(token).subscribe(()=> {
+        console.log('loaded user');
+      }, error => {
+        console.log(error);
+      });
+    }
   }
 
   async checkServer()
   {
     if(localStorage.getItem('IpAddress') === 'undefined')
     {
-      console.log('ip');
       await this.generateAlert();
     }
     else
     {
-      this.ip.checkServerIP(this.serverIP).subscribe( async (res: any) =>
+      this.ip.checkServerIP(this.serverIP).subscribe( (res: any) =>
       {
-        console.log(res.status);
+        console.log('Server is running');
+        this.router.navigate(['/login']);
       },
-      async error =>
+        error =>
       {
+        console.log(error.message);
         this.generateAlert(error);
       });
     }

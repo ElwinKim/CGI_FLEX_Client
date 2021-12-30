@@ -12,6 +12,6 @@ export class IpServiceService {
   public checkServerIP(serverIP: ServerIP)
   {
     console.log(serverIP.ipAddress);
-    return this.http.get('http://' +serverIP.ipAddress, {observe: 'response'});
+    return this.http.get('https://' +serverIP.ipAddress+'/api/User/Health/asdf_Asdf',{responseType: 'text'});
   }
 }
