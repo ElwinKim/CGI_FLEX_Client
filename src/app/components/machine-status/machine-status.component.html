@@ -3,7 +3,7 @@
     <div class="wrapper" [class.alarm-start]="statusAlarm" [style.--background-color]="wrapperBg">
       <div class="status" [style.--background-color]="bgColor"></div>
     </div>
-    <div class="machin-label">
+    <div class="machin-label" (click)="navigateRouter()">
       <label style="font-size: medium;">{{machine.MachineLable}}</label>
       <br>
       <label style="font-size: small;">{{machine.MachineName}}</label>
@@ -23,10 +23,10 @@
   <div class="container-3">
     <ion-grid class="my-grid">
       <ion-row size="10">
-        <ion-col class="cycle-off" [size]="cycleOff"></ion-col>
-        <ion-col class="setup" [size]="setup"></ion-col>
-        <ion-col class="cycle-on" [size]="cycleOn"></ion-col>
-        <ion-col class="other" [size]="other"></ion-col>
+        <ion-col class="cycle-off" [hidden]="cycleOffHidden" [size]="cycleOff"></ion-col>
+        <ion-col class="setup" [hidden]="setupHidden" [size]="setup"></ion-col>
+        <ion-col class="cycle-on" [hidden]="cycleOnHidden" [size]="cycleOn"></ion-col>
+        <ion-col class="other" [hidden]="otherHidden" [size]="other"></ion-col>
       </ion-row>
     </ion-grid>
   </div>

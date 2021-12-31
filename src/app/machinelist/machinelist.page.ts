@@ -26,7 +26,7 @@ export class MachinelistPage implements OnInit {
       'MATSURA VX100',
       'CYCLE OFF',
       'ABC123',
-      1800,
+      3000,
       36000,
       3600,
       2088
@@ -50,7 +50,7 @@ export class MachinelistPage implements OnInit {
       'ABC123',
       2100,
       18400,
-      100,
+      1500,
       0
     ));
     this.machines.push(new IMachine(
@@ -59,10 +59,10 @@ export class MachinelistPage implements OnInit {
       'MATSURA VX100',
       'OTHERS',
       'ABC123',
-      3500,
+      12500,
       29400,
-      200,
-      0
+      20000,
+      12000
     ));
   }
 
