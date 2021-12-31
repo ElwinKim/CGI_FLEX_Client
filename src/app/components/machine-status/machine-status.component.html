@@ -1,21 +1,36 @@
-<div class="card">
-  <div class="container" style="display: flex;">
-    <div class="wrapper" [class.alarm-start]="statusAlarm">
-      <div class="status"></div>
+
+  <div class="container-1" style="display: flex;">
+    <div class="wrapper" [class.alarm-start]="statusAlarm" [style.--background-color]="wrapperBg">
+      <div class="status" [style.--background-color]="bgColor"></div>
     </div>
     <div class="machin-label">
-      <label style="font-size: medium;">MC-07</label>
+      <label style="font-size: medium;">{{machine.MachineLable}}</label>
       <br>
-      <label style="font-size: small;">MATSURA VX100</label>
+      <label style="font-size: small;">{{machine.MachineName}}</label>
       <br>
-      <label style="font-size: small;">ABC123</label>
+      <label style="font-size: small;">{{machine.PartNumber}}</label>
     </div>
     <div></div>
   </div>
-  <div class="status-bar">
-
+  <div class="container-2" style="display: flex; width: 100%">
+    <div class="status-bar" style="text-align: right; width: 50%;">
+      <label style="font-size: small;">{{machine.MachineLable}}</label>
+    </div>
+    <div class="status-bar" style="text-align: right; width: 50%;">
+      <label style="font-size: small;">{{totalTime}}</label>
+    </div>
   </div>
-</div>
+  <div class="container-3">
+    <ion-grid class="my-grid">
+      <ion-row size="10">
+        <ion-col class="cycle-off" [size]="cycleOff"></ion-col>
+        <ion-col class="setup" [size]="setup"></ion-col>
+        <ion-col class="cycle-on" [size]="cycleOn"></ion-col>
+        <ion-col class="other" [size]="other"></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
 
 
 

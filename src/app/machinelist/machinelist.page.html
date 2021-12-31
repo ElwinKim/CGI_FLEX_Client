@@ -9,6 +9,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <app-machine-status></app-machine-status>
+<ion-content >
+  <div class="card" *ngFor="let machine of machines">
+    <app-machine-status [machine]="machine"></app-machine-status>
+  </div>
 </ion-content>

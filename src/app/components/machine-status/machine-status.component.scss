@@ -1,30 +1,63 @@
-.container{
-  padding-top: 5%;
-  padding-left: 5%;
-  .wrapper{
-    padding: 10px;
-    width: 60px;
-    height: 60px;
-    background-color: rgba(255, 0, 0, 0.329);
-    border-radius: 100%;
-    &.alarm-start{
-      animation: pulse 1s;
-      animation-iteration-count: infinite;
-    }
-    .status{
-      margin: auto;
-      padding: 10%;
-      width: 100%;
-      height: 100%;
-      background-color: red;
-      border-radius: 100%;
-    }
-  }
-  .machin-label{
-    padding-left: 3%;
-  }
-}
 
+  .container-1{
+    padding-top: 4%;
+    padding-left: 5%;
+    .wrapper{
+      padding: 10px;
+      width: 60px;
+      height: 60px;
+      background-color: var(--background-color);
+      border-radius: 100%;
+      &.alarm-start{
+        animation: pulse 1s;
+        animation-iteration-count: infinite;
+      }
+      .status{
+        margin: auto;
+        padding: 10%;
+        width: 100%;
+        height: 100%;
+        background-color: var(--background-color);
+        border-radius: 100%;
+      }
+    }
+    .machin-label{
+      padding-left: 3%;
+    }
+  }
+
+  .container-2{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .container-3{
+    padding-left: 5px;
+    padding-right: 5px;
+    .my-grid {
+      height: 7px;
+      width: 100%;
+      }
+      .cycle-off {
+      float: left;
+      background-color: red;
+      }
+      .setup {
+      float: left;
+      background-color: rgb(52, 123, 255);
+      }
+      .cycle-on {
+      float: left;
+      background-color: rgb(9, 207, 9);
+      }
+      .other {
+        float: left;
+        background-color: yellow;
+      }
+      .my-grid:after {
+      clear:both;
+      }
+  }
 
 @keyframes pulse {
   0%{
