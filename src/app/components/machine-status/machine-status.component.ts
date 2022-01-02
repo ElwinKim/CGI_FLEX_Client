@@ -38,21 +38,32 @@ export class MachineStatusComponent implements OnInit {
   * Calculate time for display total time bar chart
   */
   calculationTime(){
-    this.totalTime = '1:00:00';
+    //Calculate total cycle time
+    const cycleTime = this.machine.cycleTime;
 
-    const cycleOffTime = this.machine.CycleOff/3600;
-    const cycleOnTime = this.machine.CycleOn/3600;
-    const setUpTime = this.machine.SetUp/3600;
-    const othersTime = this.machine.Others/3600;
+    const h = Math.floor(cycleTime / 3600);
+    const m = Math.floor(cycleTime % 3600 / 60);
+    const s = Math.floor(cycleTime % 3600 % 60);
 
+    const hDisplay = h > 0 ? h + (h === 1 ? ':' : ':') : '00';
+    const mDisplay = m > 0 ? m + (m === 1 ? ':' : ':') : '00';
+    const sDisplay = s > 0 ? s + (s === 1 ? '' : '') : '00';
+
+    this.totalTime = hDisplay + mDisplay + sDisplay;
+
+    //Converts second to hour
+    const cycleOffTime = this.machine.cycleOffTime/3600;
+    const cycleOnTime = this.machine.cycleOnTime/3600;
+    const setUpTime = this.machine.setupTime/3600;
+    const othersTime = this.machine.othersTime/3600;
 
     const result =cycleOffTime + cycleOnTime +
     setUpTime + othersTime;
 
-    const cycleOffCal = Math.round(((cycleOffTime/result) * this.totalGageLength));
-    const cycleOnCal = Math.round(((cycleOnTime/result) * this.totalGageLength));
-    const setupCal = Math.round(((setUpTime/result) * this.totalGageLength));
-    const otherCal = Math.round(((othersTime/result) * this.totalGageLength));
+    let cycleOffCal = Math.round(((cycleOffTime/result) * this.totalGageLength));
+    let cycleOnCal = Math.round(((cycleOnTime/result) * this.totalGageLength));
+    let setupCal = Math.round(((setUpTime/result) * this.totalGageLength));
+    let otherCal = Math.round(((othersTime/result) * this.totalGageLength));
 
     if(cycleOffCal <= 0)
     {
@@ -77,10 +88,34 @@ export class MachineStatusComponent implements OnInit {
       this.totalGageLength -= 0.5;
     }
 
-    this.cycleOff = Math.round(((cycleOffTime/result) * this.totalGageLength)).toString();
-    this.cycleOn = Math.round(((cycleOnTime/result) * this.totalGageLength)).toString();
-    this.setup = Math.round(((setUpTime/result) * this.totalGageLength)).toString();
-    this.other = Math.round(((othersTime/result) * this.totalGageLength)).toString();
+    cycleOffCal = Math.round(((cycleOffTime/result) * this.totalGageLength));
+    cycleOnCal = Math.round(((cycleOnTime/result) * this.totalGageLength));
+    setupCal = Math.round(((setUpTime/result) * this.totalGageLength));
+    otherCal = Math.round(((othersTime/result) * this.totalGageLength));
+
+    if(Math.round((cycleOffCal + cycleOnCal + setupCal + otherCal)) < 12){
+      if(cycleOffCal !== 0)
+      {
+        cycleOffCal +=1;
+      }
+      else if(cycleOnCal !== 0)
+      {
+        cycleOnCal +=1;
+      }
+      else if(setupCal !== 0)
+      {
+        setupCal +=1;
+      }
+      else if(otherCal !== 0)
+      {
+        setupCal +=1;
+      }
+    }
+
+    this.cycleOff = Math.round(cycleOffCal).toString();
+    this.cycleOn = Math.round(cycleOnCal).toString();
+    this.setup = Math.round(setupCal).toString();
+    this.other = Math.round(otherCal).toString();
 
   }
 
@@ -88,7 +123,7 @@ export class MachineStatusComponent implements OnInit {
   * Navigate to Machine status page
   */
   navigateRouter(){
-    this.router.navigate(['/machinelist', this.machine.MachineId]);
+    this.router.navigate(['/machine-status', this.machine.machineId]);
   }
 
   /*
@@ -97,21 +132,21 @@ export class MachineStatusComponent implements OnInit {
   * the Alarm goes only on CYCLE OFF and OTHERS.
   */
   statusCheck(){
-    if(this.machine.Status === 'CYCLE OFF'){
+    if(this.machine.status === 'CYCLE OFF'){
       this.bgColor = 'red';
       this.wrapperBg = 'rgba(255, 0, 0, 0.329)';
       this.statusAlarm = 'alarm-start';
     }
-    else if(this.machine.Status === 'OTHERS'){
+    else if(this.machine.status === 'OTHERS'){
       this.bgColor= 'yellow';
       this.wrapperBg = 'rgba(255, 255, 0, 0.322)';
       this.statusAlarm = 'alarm-start';
     }
-    else if(this.machine.Status === 'CYCLE ON'){
+    else if(this.machine.status === 'CYCLE ON'){
       this.bgColor= 'rgb(9, 207, 9)';
       this.wrapperBg = 'rgb(9, 207, 9, 0.330)';
     }
-    else if(this.machine.Status === 'SETUP'){
+    else if(this.machine.status === 'SETUP'){
       this.bgColor= 'rgb(52, 123, 255)';
       this.wrapperBg = 'rgb(52, 123, 255, 0.330)';
     }

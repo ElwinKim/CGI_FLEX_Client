@@ -4,17 +4,17 @@
       <div class="status" [style.--background-color]="bgColor"></div>
     </div>
     <div class="machin-label" (click)="navigateRouter()">
-      <label style="font-size: medium;">{{machine.MachineLable}}</label>
+      <label style="font-size: medium;">{{machine.machineLabel}}</label>
       <br>
-      <label style="font-size: small;">{{machine.MachineName}}</label>
+      <label style="font-size: small;">{{machine.machineName}}</label>
       <br>
-      <label style="font-size: small;">{{machine.PartNumber}}</label>
+      <label style="font-size: small;">{{machine.partNr}}</label>
     </div>
     <div></div>
   </div>
   <div class="container-2" style="display: flex; width: 100%">
     <div class="status-bar" style="text-align: right; width: 50%;">
-      <label style="font-size: small;">{{machine.MachineLable}}</label>
+      <label style="font-size: small;">{{machine.machineLabel}}</label>
     </div>
     <div class="status-bar" style="text-align: right; width: 50%;">
       <label style="font-size: small;">{{totalTime}}</label>

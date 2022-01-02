@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { MachinelistPageRoutingModule } from './machinelist-routing.module';
 
 import { MachinelistPage } from './machinelist.page';
-import { MachineStatus } from '../components/machine-status/machine-status.module';
+import { MachineStatus } from '../../components/machine-status/machine-status.module';
 
 @NgModule({
   imports: [

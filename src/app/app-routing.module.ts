@@ -1,15 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-
+import { AuthGuard } from './auth.guard';
 const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
-  // {
-  //   path: 'login',
-  //   loadChildren: () => import('./login/login.module').then(n=>n.LoginModule)
-  // },
   {
     path: '',
     redirectTo: 'home',
@@ -21,7 +17,12 @@ const routes: Routes = [
   },
   {
     path: 'machinelist',
-    loadChildren: () => import('./machinelist/machinelist.module').then( m => m.MachinelistPageModule)
+    loadChildren: () => import('./machine/machinelist/machinelist.module').then( m => m.MachinelistPageModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'machine-status/:id',
+    loadChildren: () => import('./machine/machine-status/machine-status.module').then( m => m.MachineStatusPageModule)
   },
 ];
 

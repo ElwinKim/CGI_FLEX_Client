@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from 'src/app/login/account.service';
 
 @Component({
   selector: 'app-pop-component',
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PopComponentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private accountService: AccountService) { }
 
   ngOnInit() {}
+
+  logout(){
+    this.accountService.logout();
+  }
 
 }

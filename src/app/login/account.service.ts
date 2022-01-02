@@ -60,9 +60,9 @@ export class AccountService {
           } else {
             localStorage.setItem('rememberCurrentUser', 'false');
           }
-
           localStorage.setItem('token', user.token);
           this.isLoggedIn = true;
+          localStorage.setItem('isLoggedIn', 'true');
           this.currentUserSubject.next(user);
           this.router.navigate(['/machinelist']);
         } else {
@@ -71,6 +71,18 @@ export class AccountService {
       })
     );
   }
+
+  checkLoggedIn(){
+    if(localStorage.getItem('token') || sessionStorage.getItem('token'))
+    {
+      return true;
+    }
+    else
+    {
+      this.router.navigate(['/']);
+    }
+  }
+
   resetcredentials() {
     //clear all localstorages
     localStorage.removeItem('rememberCurrentUser');
@@ -82,6 +94,8 @@ export class AccountService {
 
   logout(){
     localStorage.removeItem('token');
-    this.router.navigateByUrl('/');
+    sessionStorage.removeItem('token');
+    localStorage.removeItem('isLoggedIn');
+    setTimeout(() => this.router.navigate(['/home']));
   }
 }
