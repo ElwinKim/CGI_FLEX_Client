@@ -1,18 +1,18 @@
 
-  <div class="container-1" style="display: flex;">
+  <div class="container-1" style="display: flex; width:100%">
     <div class="wrapper" [class.alarm-start]="statusAlarm" [style.--background-color]="wrapperBg">
       <div class="status" [style.--background-color]="bgColor"></div>
     </div>
-    <div class="machin-label" (click)="navigateRouter()">
-      <label style="font-size: medium;">{{machine.machineLabel}}</label>
+    <div class="machin-label" (click)="navigateRouter()" style="cursor: pointer;">
+      <label style="font-size: medium;cursor: pointer;">{{machine.machineLabel}}</label>
       <br>
-      <label style="font-size: small;">{{machine.machineName}}</label>
+      <label style="font-size: small;cursor: pointer;">{{machine.machineName}}</label>
       <br>
-      <label style="font-size: small;">{{machine.partNr}}</label>
+      <label style="font-size: small;cursor: pointer;">{{machine.partNr}}</label>
     </div>
     <div></div>
   </div>
-  <div class="container-2" style="display: flex; width: 100%">
+  <div class="container-2" style="display: flex;">
     <div class="status-bar" style="text-align: right; width: 50%;">
       <label style="font-size: small;">{{machine.machineLabel}}</label>
     </div>

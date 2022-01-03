@@ -92,10 +92,10 @@ export class AccountService {
   }
 
 
-  logout(){
+  async logout(){
     localStorage.removeItem('token');
     sessionStorage.removeItem('token');
     localStorage.removeItem('isLoggedIn');
-    setTimeout(() => this.router.navigate(['/home']));
+    await setTimeout(() => this.router.navigate(['/home']));
   }
 }

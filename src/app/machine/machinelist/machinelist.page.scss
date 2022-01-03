@@ -6,3 +6,45 @@ ion-content{
   border-bottom: 1px solid rgba(167, 167, 167, 0.521);
   height: 20.5%;
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .card{
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .card{
+    width: 100%;
+    justify-content: center;
+    width: 360px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .card{
+    width: 100%;
+    justify-content: center;
+    height: 31.5%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .card{
+    width: 100%;
+    align-content: center;
+    height: 31.5%;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .card{
+    width: 100%;
+    align-content: center;
+    height: 31.5%;
+  }
+}

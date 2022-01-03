@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
-import { MachineStatusComponent } from './machine-status.component';
+import { MachineListComponent } from './machine-list.component';
 
 @NgModule({
   imports: [CommonModule, IonicModule],
-  declarations: [MachineStatusComponent],
-  exports: [MachineStatusComponent]
+  declarations: [MachineListComponent],
+  exports: [MachineListComponent]
 })
-export class MachineStatus {}
+
+export class MachineList {}
 

@@ -3,11 +3,12 @@ import { Router } from '@angular/router';
 import { IMachine } from 'src/shared/models/Machine';
 
 @Component({
-  selector: 'app-machine-status',
-  templateUrl: './machine-status.component.html',
-  styleUrls: ['./machine-status.component.scss'],
+  selector: 'app-machine-list',
+  templateUrl: './machine-list.component.html',
+  styleUrls: ['./machine-list.component.scss'],
 })
-export class MachineStatusComponent implements OnInit {
+
+export class MachineListComponent implements OnInit {
   @Input() machine: IMachine;
 
   totalGageLength = 12;
@@ -151,6 +152,4 @@ export class MachineStatusComponent implements OnInit {
       this.wrapperBg = 'rgb(52, 123, 255, 0.330)';
     }
   }
-
-
 }

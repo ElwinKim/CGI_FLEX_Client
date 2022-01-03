@@ -11,6 +11,7 @@
       &.alarm-start{
         animation: pulse 1s;
         animation-iteration-count: infinite;
+        -webkit-animation: pulse 1s infinite;
       }
       .status{
         margin: auto;
@@ -70,4 +71,5 @@
     transform: scale(1);
   }
 }
+
 

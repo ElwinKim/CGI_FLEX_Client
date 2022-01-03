@@ -1,0 +1,317 @@
+.machine-lable-container{
+  .machine-label{
+    --background: rgba(29, 26, 26, 0.651);
+    height: 35px;
+    width: 100%;
+    font-size: medium;
+    .label-1{
+      text-align: center;
+      padding-bottom: 5px;
+    }
+    .label-2{
+      text-align: right;
+      padding-bottom: 5px;
+    }
+ }
+}
+.machine-part-container{
+  .machine-part-name{
+    --background: rgba(29, 26, 26, 0.651);
+    height: 35px;
+    width: 100%;
+    font-size: medium;
+    text-align: center;
+    .label-1{
+      padding-bottom: 10px;
+    }
+
+  }
+}
+
+.machine-status-container{
+  background-color: rgba(29, 26, 26, 0.651);
+  height: 88%;
+  .wrapper{
+    position: absolute;
+    top: 78px;
+    left: 135px;
+    padding: 10px;
+    width: 80px;
+    height: 80px;
+    background-color: var(--background-color);
+    border-radius: 100%;
+    z-index: 20;
+    &.alarm-start{
+      animation: pulse 1s;
+      animation-iteration-count: infinite;
+      -webkit-animation: pulse 1s infinite;
+    }
+    .status{
+      margin: auto;
+      padding: 10%;
+      width: 100%;
+      height: 100%;
+      background-color: var(--background-color);
+      border-radius: 100%;
+    }
+  }
+  .grid-wrapper{
+    padding-top: 50px;
+    .grid-1{
+      justify-content: center;
+      align-content: center;
+      .grid-1-row{
+        height: 120px;
+        .grid-1-col-1{
+          display: flex;
+          height: 120px;
+          background-color: rgba(59, 59, 59, 0.315);
+          border: 1px solid black;
+          .div-1{
+            width: 50%;
+            margin-top: 10px;
+            margin-left: 10px;
+            text-align: start;
+          }
+          .div-2{
+            width: 50%;
+          }
+        }
+        .grid-1-col-2{
+          display: flex;
+          height: 120px;
+          background-color: rgba(59, 59, 59, 0.315);
+          border: 1px solid black;
+          .div-1{
+            width: 50%;
+          }
+          .div-2{
+            margin-top: 10px;
+            margin-right: 10px;
+            width: 50%;
+            text-align: end;
+          }
+        }
+      }
+      .grid-2-row{
+        height: 100%;
+        .grid-2-col-1{
+          display: flex;
+          background-color: rgba(59, 59, 59, 0.315);
+          border: 1px solid black;
+          .div-1{
+            margin-left: 10px;
+            margin-bottom: 10px;
+            width: 50%;
+            align-self: flex-end;
+          }
+          .div-2{
+            width: 50%;
+          }
+        }
+        .grid-2-col-2{
+          display: flex;
+          background-color: rgba(59, 59, 59, 0.315);
+          border: 1px solid black;
+          .div-1{
+            width: 50%;
+          }
+          .div-2{
+            margin-bottom: 10px;
+            margin-right: 10px;
+            text-align: end;
+            width: 50%;
+            align-self: flex-end;
+          }
+        }
+      }
+    }
+  }
+}
+.time-stamp{
+  font-size: small;
+}
+.status{
+  font-size: medium;
+}
+
+.corner {
+  height: 60px;
+  width: 60px;
+
+  background-color: rgb(0, 0, 0);
+}
+.left-arc-1 {
+  margin-top: 60px;
+  margin-left: -3px;
+  border-color: rgb(105, 105, 105);
+  border-radius: 0 100% 0 0;
+}
+.right-arc-1 {
+  margin-top: 60px;
+  margin-left: 28px;
+  border-radius: 100% 0 0 0;
+  border-width: 0 0 0 0;
+}
+.left-arc-2 {
+  margin-left: -3px;
+  margin-top: -3px;
+  border-radius: 0 0 100% 0;
+}
+.right-arc-2 {
+  margin-left: 28px;
+  margin-top: -3px;
+  border-radius: 0 0 0 100%;
+}
+
+//Current time progress bar
+//left-top corner circular bar
+.progress-1{
+  top: 36px;
+  left: 4.7px;
+  position: relative;
+  margin: 4px;
+  float:left;
+  text-align: center;
+}
+.barOverflow-1{ /* Wraps the rotating .bar */
+  position: relative;
+  overflow: hidden; /* Comment this line to understand the trick */
+  width: 78px; height: 78px; /* Half circle (overflow) */
+  margin-bottom: -14px; /* bring the numbers up */
+}
+
+.bar-1{
+  position: absolute;
+  top: 0; left: 1px;
+  width: 158px; height: 158px; /* full circle! */
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 22px solid rgb(97, 94, 94);     /* half gray, */
+  border-bottom-color: #0bf;  /* half azure */
+  border-right-color: #0bf;
+  z-index: 22;
+}
+
+//right-top corner circular bar
+.progress-2{
+  top: -84px;
+  left: -3.7px;
+  position: relative;
+  margin: 4px;
+  float:left;
+  text-align: center;
+}
+.barOverflow-2{ /* Wraps the rotating .bar */
+  position: relative;
+  overflow: hidden; /* Comment this line to understand the trick */
+  width: 78px; height: 78px; /* Half circle (overflow) */
+  margin-bottom: -14px; /* bring the numbers up */
+}
+
+.bar-2{
+  position: absolute;
+  right: 0px;
+  width: 158px; height: 158px; /* full circle! */
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 22px solid rgb(97, 94, 94);      /* half gray, */
+  border-bottom-color: rgb(0, 253, 13);  /* half azure */
+  border-right-color: rgb(0, 253, 13);
+  z-index: 22;
+}
+
+//left-bottom corner circular bar
+.progress-3{
+  top: -61px;
+  left: 4.5px;
+  position: relative;
+  margin: 4px;
+  float:left;
+  text-align: center;
+}
+.barOverflow-3{ /* Wraps the rotating .bar */
+  position: relative;
+  overflow: hidden; /* Comment this line to understand the trick */
+  width: 78px; height: 79px; /* Half circle (overflow) */
+  margin-bottom: -14px; /* bring the numbers up */
+}
+
+.bar-3{
+  position: absolute;
+  left: 1px;
+  bottom: 0px;
+  width: 158px; height: 158px; /* full circle! */
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 22px solid rgb(97, 94, 94);      /* half gray, */
+  border-bottom-color: rgb(255, 0, 0);  /* half azure */
+  border-right-color: yellow;
+  transform: rotate(135deg); //135 degree is the full of border
+  z-index: 22;
+}
+
+//right-bottom corner circular bar
+.progress-4{
+  top: -61px;
+  right: 3.7px;
+  position: relative;
+  margin: 4px;
+  float:left;
+  text-align: center;
+}
+.barOverflow-4{ /* Wraps the rotating .bar */
+  position: relative;
+  overflow: hidden; /* Comment this line to understand the trick */
+  width: 78px; height: 79px; /* Half circle (overflow) */
+  margin-bottom: -14px; /* bring the numbers up */
+}
+
+.bar-4{
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 158px; height: 158px; /* full circle! */
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 22px solid rgb(97, 94, 94);      /* half gray, */
+  border-bottom-color: rgb(238, 255, 0);  /* half azure */
+  border-right-color: red;
+  z-index: 22;
+  transform: rotate(45deg); //135 degree is the full of border
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  ion-grid{
+    width: 360px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  ion-grid{
+    width: 360px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  ion-grid{
+    width: 360px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  ion-grid{
+    width: 360px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  ion-grid{
+    width: 360px;
+  }
+}

@@ -1,6 +1,7 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { IMachine } from 'src/shared/models/Machine';
 
@@ -17,7 +18,21 @@ export class MachinesService {
     const token = localStorage.getItem('token');
     headers = headers.set('Authorization', `Bearer ${token}`);
 
-    return this.http.get<IMachine>(this.baseUrl + 'api/Mobile/Machines', {headers});
+    return this.http.get<IMachine>(this.baseUrl + 'api/Mobile/Machines', {headers, observe: 'response'})
+    .pipe(
+      // eslint-disable-next-line arrow-body-style
+      map(response => {
+        return response.body;
+      })
+    );
+  }
+
+  async getAMachine(machineId?: string){
+    let headers = new HttpHeaders();
+    const token = localStorage.getItem('token');
+    headers = headers.set('Authorization', `Bearer ${token}`);
+
+    return await this.http.get<IMachine>(this.baseUrl + `api/Mobile/Machine/${machineId}`, {headers, observe:'response'});
   }
 
 }

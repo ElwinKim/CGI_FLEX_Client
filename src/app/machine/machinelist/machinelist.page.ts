@@ -1,6 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { PopoverController } from '@ionic/angular';
 import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';

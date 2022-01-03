@@ -4,7 +4,7 @@ import { AlertController } from '@ionic/angular';
 import { IpServiceService } from '../ip-service.service';
 import { AccountService } from '../login/account.service';
 import { ServerIP } from '../shared/models/serverIP.model';
-
+import { NgZone } from '@angular/core';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -15,25 +15,19 @@ export class HomePage implements OnInit{
   ipAddress: string;
   storage: any;
   constructor(private ip: IpServiceService, public alertController: AlertController,
-    public serverIP: ServerIP, private router: Router, private accountService: AccountService) {}
+    public serverIP: ServerIP, private router: Router, private accountService: AccountService,
+    private zone: NgZone) {}
 
     ngOnInit(){
       this.serverIP.ipAddress = localStorage.getItem('IpAddress');
       this.checkServer();
       this.loadCurrentUser();
-      console.log('check');
     }
 
-    ngOnload(){
-      this.serverIP.ipAddress = localStorage.getItem('IpAddress');
-      this.checkServer();
-      this.loadCurrentUser();
-      console.log('check');
-    }
-    loadCurrentUser(){
+    async loadCurrentUser(){
       const token = localStorage.getItem('token') || sessionStorage.getItem('token') ;
       if(token){
-        this.accountService.loadCurrentUser(token).subscribe(()=> {
+        await this.accountService.loadCurrentUser(token).subscribe(()=> {
           console.log('loaded user');
         }, error => {
           console.log(error);
@@ -43,6 +37,7 @@ export class HomePage implements OnInit{
 
     async checkServer()
     {
+      this.zone.run(async () =>{
       if(localStorage.getItem('IpAddress') === 'undefined')
       {
         await this.generateAlert();
@@ -59,8 +54,7 @@ export class HomePage implements OnInit{
           console.log(error.message);
           this.generateAlert(error);
         });
-      }
-
+      }});
     }
 
     async generateAlert(error?: any){
