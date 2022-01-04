@@ -35,4 +35,20 @@ export class MachinesService {
     return await this.http.get<IMachine>(this.baseUrl + `api/Mobile/Machine/${machineId}`, {headers, observe:'response'});
   }
 
+  async getTimeFormat(machine: IMachine){
+
+    let cycleTime = machine.cycleTime;
+
+    const h = Math.floor(cycleTime / 3600);
+    const m = Math.floor(cycleTime % 3600 / 60);
+    const s = Math.floor(cycleTime % 3600 % 60);
+
+
+    const hDisplay = h > 0 ? h + (h === 1 ? ':' : ':') : '0';
+    const mDisplay = m > 0 ? m + (m === 1 ? ':' : ':') : '0';
+    const sDisplay = s > 0 ? s + (s === 1 ? '' : '') : '0';
+
+    cycleTime++;
+    return hDisplay+mDisplay+sDisplay;
+  }
 }

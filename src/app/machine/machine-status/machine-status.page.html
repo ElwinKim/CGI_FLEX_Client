@@ -13,7 +13,9 @@
 </ion-header>
 
 <ion-content>
+  <app-status-list></app-status-list>
   <div class="machine-lable-container"style="display: flex;">
+
     <ion-item class="machine-label">
       <ion-label class="label-1">
         {{machine?.machineLabel}}
@@ -40,14 +42,14 @@
             <div class="div-1">
               <ion-label class="status">SET UP</ion-label>
               <br>
-              <ion-label class="time-stamp">17:11:00</ion-label>
+              <ion-label class="time-stamp">{{setUp}}</ion-label>
               <br>
-              <ion-label class="percentage">40%</ion-label>
+              <ion-label class="percentage">{{setUpPercent}}</ion-label>
             </div>
             <div class="div-2">
               <div class="progress-1">
                 <div class="barOverflow-1">
-                  <div class="bar-1"></div>
+                  <div class="bar-1" [style.--bar-setup]="setupBar"></div>
                 </div>
               </div>
               <div class="corner right-arc-1"></div>
@@ -58,28 +60,31 @@
           </ion-col>
           <ion-col class="grid-1-col-2 ion-no-margin ion-no-padding">
             <div class="div-1">
+              <div class="timer-container" id="main-content" (click)="openMenu()" >
+                <label class ="timer">{{totalTime}}</label>
+              </div>
               <div class="corner left-arc-1"></div>
               <div class="progress-2">
                 <div class="barOverflow-2">
-                  <div class="bar-2"></div>
+                  <div class="bar-2" [style.--bar-cycleOn]="cycleOnBar"></div>
                 </div>
               </div>
             </div>
             <div class="div-2">
               <ion-label class="status">CYCLE ON</ion-label>
               <br>
-              <ion-label class="time-stamp">17:11:00</ion-label>
+              <ion-label class="time-stamp">{{cycleOn}}</ion-label>
               <br>
-              <ion-label class="percentage">40%</ion-label>
+              <ion-label class="percentage">{{cycleOnPercent}}</ion-label>
             </div>
           </ion-col>
         </ion-row>
         <ion-row class="grid-2-row">
           <ion-col class="grid-2-col-1 ion-no-margin ion-no-padding">
             <div class="div-1">
-              <ion-label class="percentage">40%</ion-label>
+              <ion-label class="percentage">{{othersPercent}}</ion-label>
               <br>
-              <ion-label class="time-stamp">17:11:00</ion-label>
+              <ion-label class="time-stamp">{{others}}</ion-label>
               <br>
               <ion-label class="status">OTHERS</ion-label>
             </div>
@@ -87,7 +92,7 @@
               <div class="corner right-arc-2"></div>
               <div class="progress-3">
                 <div class="barOverflow-3">
-                  <div class="bar-3"></div>
+                  <div class="bar-3" [style.--bar-others]="othersBar"></div>
                 </div>
               </div>
             </div>
@@ -97,14 +102,14 @@
               <div class="corner left-arc-2"></div>
               <div class="progress-4">
                 <div class="barOverflow-4">
-                  <div class="bar-4"></div>
+                  <div class="bar-4" [style.--bar-cycleOff]="cycleOffBar"></div>
                 </div>
               </div>
             </div>
             <div class="div-2">
-              <ion-label class="percentage">40%</ion-label>
+              <ion-label class="percentage">{{cycleOffPercent}}</ion-label>
               <br>
-              <ion-label class="time-stamp">17:11:00</ion-label>
+              <ion-label class="time-stamp">{{cycleOff}}</ion-label>
               <br>
               <ion-label class="status">CYCLE OFF</ion-label>
             </div>
@@ -112,5 +117,48 @@
         </ion-row>
       </ion-grid>
     </div>
+    <div class="override-container">
+      <ion-grid class="override-grid">
+        <ion-row class="override-row">
+          <ion-col class="feedrate">
+            <div class="sliderValue">
+              <span>100%</span>
+            </div>
+            <div class="fovr-range">
+              <input type="range" min="0" max="200" [value]="fovrValue" steps="1" [style.--fovr-background]="fovrBackground"
+              (input)="fovrValueChanged($event)">
+            </div>
+            <div class="title">
+              <span>FORV</span>
+            </div>
+          </ion-col>
+          <ion-col class="spindle">
+            <div class="sliderValue">
+              <span>100%</span>
+            </div>
+            <div class="sovr-range">
+              <input type="range" min="0" max="200" [value]="sovrValue" steps="1" [style.--sovr-background]="sovrBackground"
+              (input)="sovrValueChanged($event)">
+            </div>
+            <div class="title">
+              <span>SORV</span>
+            </div>
+          </ion-col>
+          <ion-col class="rapid">
+            <div class="sliderValue">
+              <span>100%</span>
+            </div>
+            <div class="rovr-range">
+              <input type="range" min="0" max="200" [value]="rovrValue" steps="1" [style.--rovr-background]="rovrBackground"
+              (input)="rovrValueChanged($event)">
+            </div>
+            <div class="title">
+              <span>RORV</span>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
   </div>
+
 </ion-content>

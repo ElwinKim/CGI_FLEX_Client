@@ -33,11 +33,11 @@
   height: 88%;
   .wrapper{
     position: absolute;
-    top: 78px;
-    left: 135px;
+    top: 74px;
+    left: 130px;
     padding: 10px;
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     background-color: var(--background-color);
     border-radius: 100%;
     z-index: 20;
@@ -114,7 +114,7 @@
           background-color: rgba(59, 59, 59, 0.315);
           border: 1px solid black;
           .div-1{
-            width: 50%;
+            width: 40%;
           }
           .div-2{
             margin-bottom: 10px;
@@ -134,7 +134,19 @@
 .status{
   font-size: medium;
 }
+.percentage{
+  font-size: small;
+}
 
+.timer-container{
+  left: -26px;
+  top: 110px;
+  position: absolute;
+  z-index: 25;
+  .timer{
+    color: black;
+  }
+}
 .corner {
   height: 60px;
   width: 60px;
@@ -188,8 +200,9 @@
   border-radius: 50%;
   box-sizing: border-box;
   border: 22px solid rgb(97, 94, 94);     /* half gray, */
-  border-bottom-color: #0bf;  /* half azure */
-  border-right-color: #0bf;
+  border-bottom-color:rgb(52, 123, 255);  /* half azure */
+  border-right-color: rgb(52, 123, 255);
+  transform: rotate(var(--bar-setup)); //45deg is 0 hours, and 135deg is full time
   z-index: 22;
 }
 
@@ -218,6 +231,7 @@
   border: 22px solid rgb(97, 94, 94);      /* half gray, */
   border-bottom-color: rgb(0, 253, 13);  /* half azure */
   border-right-color: rgb(0, 253, 13);
+  transform: rotate(var(--bar-cycleOn)); //135deg is 0 hours, and 225deg is full
   z-index: 22;
 }
 
@@ -245,9 +259,9 @@
   border-radius: 50%;
   box-sizing: border-box;
   border: 22px solid rgb(97, 94, 94);      /* half gray, */
-  border-bottom-color: rgb(255, 0, 0);  /* half azure */
+  border-bottom-color: yellow;  /* half azure */
   border-right-color: yellow;
-  transform: rotate(135deg); //135 degree is the full of border
+  transform: rotate(var(--bar-others)); //-44deg is 0, 134 degree is the full
   z-index: 22;
 }
 
@@ -275,12 +289,80 @@
   border-radius: 50%;
   box-sizing: border-box;
   border: 22px solid rgb(97, 94, 94);      /* half gray, */
-  border-bottom-color: rgb(238, 255, 0);  /* half azure */
+  border-bottom-color: red;  /* half azure */
   border-right-color: red;
   z-index: 22;
-  transform: rotate(45deg); //135 degree is the full of border
+  transform: rotate(var(--bar-cycleOff)); //135 degree is the full
 }
 
+//slider
+.fovr-range input{
+  -webkit-appearance: none;
+  width: 100%;
+  height: 3px;
+  background: var(--fovr-background); //var(--fovr-background)
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  z-index: 2222;
+}
+.sovr-range input{
+  -webkit-appearance: none;
+  width: 100%;
+  height: 3px;
+  background: var(--sovr-background); // var(--sovr-background)
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  z-index: 2222;
+}
+
+.rovr-range input{
+  -webkit-appearance: none;
+  width: 100%;
+  height: 3px;
+  background: var(--rovr-background); //var(--rovr-background)
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  z-index: 2222;
+}
+
+.sliderValue{
+  text-align: center;
+}
+.title{
+  margin-top: 5px;
+  text-align: center;
+}
+span{
+  font-size: small;
+}
+
+.fovr-range input::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  width: 5px;
+  height: 20px;
+  background: #ffffff;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.sovr-range input::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  width: 5px;
+  height: 20px;
+  background: #ffffff;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.rovr-range input::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  width: 5px;
+  height: 20px;
+  background: #ffffff;
+  border-radius: 30px;
+  cursor: pointer;
+}
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   ion-grid{

@@ -1,0 +1,13 @@
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
+import { StatusListComponent} from '../status-list/status-list.component';
+
+@NgModule({
+  imports: [CommonModule, IonicModule],
+  declarations: [StatusListComponent],
+  exports: [StatusListComponent]
+})
+
+export class StatusList {}
+
