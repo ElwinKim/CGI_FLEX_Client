@@ -77,6 +77,7 @@ export class MachineStatusPage implements OnInit {
     return true;
   }
 
+  //check the status, and set the values for center circle styling
   statusCheck(){
     if(this.machine?.status === 'CYCLE OFF'){
       this.bgColor = 'red';
@@ -131,6 +132,7 @@ export class MachineStatusPage implements OnInit {
 
   }
 
+  //get the percentage for the status's grid
   getPercentage(){
     this.cycleOffPercent = ((this.machine.cycleOffTime/this.machine.cycleTime)*100).toFixed(0) + '%';
     this.cycleOnPercent = ((this.machine.cycleOnTime/this.machine.cycleTime)*100).toFixed(0) + '%';
@@ -138,6 +140,7 @@ export class MachineStatusPage implements OnInit {
     this.othersPercent = ((this.machine.othersTime/this.machine.cycleTime)*100).toFixed(0) + '%';
   }
 
+  //initialize the input range's value
   displayOverride(){
     this.fovrValue = this.machine.feedrateOvr;
     this.sovrValue = this.machine.spindleOvr;
@@ -294,6 +297,7 @@ export class MachineStatusPage implements OnInit {
     console.log('menu');
     this.menu.open();
   }
+
 }
 
 

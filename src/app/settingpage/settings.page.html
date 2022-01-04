@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/machinelist"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="font-size: small;">Settings</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="dark" (click)="logout()">
+        Log out
+        <ion-icon name="power-outline" color="danger"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="title">
+    <ion-label>User</ion-label>
+  </div>
+
+  <ion-card>
+      <ion-item lines="none">
+        <i class="fas fa-user"></i>
+        <ion-label >Username</ion-label>
+        <div class="username-input" style="padding-left: 20px;">
+          <ion-input [value]="userName" ></ion-input>
+        </div>
+      </ion-item>
+      <ion-item lines="none">
+        <i class="fas fa-envelope"></i>
+        <ion-label>Email</ion-label>
+        <div class="email-input" style="padding-left: 50px;">
+          <ion-input [value]="email" ></ion-input>
+        </div>
+      </ion-item>
+      <ion-item lines="none">
+        <i class="fas fa-address-card"></i>
+        <ion-label>User ID</ion-label>
+        <div class="userId-input" style="padding-left: 40px;">
+          <ion-input [value]="userId"></ion-input>
+        </div>
+      </ion-item>
+      <ion-item lines="none">
+        <i class="fas fa-map-marker-alt"></i>
+        <ion-label>Role</ion-label>
+        <div class="role-input" style="padding-left: 65px;">
+          <ion-input [value]="role"></ion-input>
+        </div>
+      </ion-item>
+  </ion-card>
+
+  <div class="ip_address">
+    <ion-label>CGI_Flex</ion-label>
+  </div>
+  <ion-card>
+    <ion-item lines="none">
+      <ion-label>IP address</ion-label>
+      <div class="ip-input" style="padding-left: 35px;">
+        <ion-input [value]="ipAdress"></ion-input>
+      </div>
+    </ion-item>
+  </ion-card>
+  <div class="passcode">
+    <ion-label>Passcode</ion-label>
+  </div>
+  <ion-card>
+    <ion-item button lines="none" disabled="true">
+      <ion-label >Turn Passcode On</ion-label>
+    </ion-item>
+    <ion-item button lines="none" disabled="true">
+      <ion-label >Change Passcode</ion-label>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+    <ion-item button lines="none" disabled="true">
+      <ion-label >Require Passcode</ion-label>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+  </ion-card>
+  <ion-button color="custom" expand="full" type="submit">
+    Save Changes
+   </ion-button>
+</ion-content>

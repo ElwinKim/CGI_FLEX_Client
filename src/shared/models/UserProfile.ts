@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 export interface IUserProfile {
-  UserId: number;
-  UserName: string;
+  userID: number;
+  userName: string;
   FirstName: string;
   LastName: string;
-  Email: string;
-  Role: string;
+  email: string;
+  role: string;
 }

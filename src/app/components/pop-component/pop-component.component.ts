@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { AccountService } from 'src/app/login/account.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { AccountService } from 'src/app/login/account.service';
 })
 export class PopComponentComponent implements OnInit {
 
-  constructor(private accountService: AccountService) { }
+  constructor(private accountService: AccountService, private route: Router) { }
 
   ngOnInit() {}
 
@@ -16,4 +17,14 @@ export class PopComponentComponent implements OnInit {
     this.accountService.logout();
   }
 
+  goToSetting(){
+    const jwt = localStorage.getItem('token');
+    const jwtData = jwt.split('.')[1];
+    const decodedJwtJsonData = window.atob(jwtData);
+    const decodedJwtData = JSON.parse(decodedJwtJsonData);
+
+    const id = decodedJwtData.nameid;
+
+    this.route.navigate([`/settings/${id}`]);
+  }
 }

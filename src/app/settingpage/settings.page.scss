@@ -1,0 +1,44 @@
+ion-content{
+  height: 100%;
+  background-color: rgba(29, 26, 26, 0.651);
+  ion-card{
+    background-color: rgba(29, 26, 26, 0.651);
+    ion-item{
+      font-size: medium;
+      background-color: rgba(29, 26, 26, 0.158);
+      border-bottom: 1px solid rgba(107, 107, 107, 0.479);
+    }
+
+    ion-label{
+      margin-left: 5px;
+    }
+  }
+  .title{
+    margin-top: 5px;
+    margin-left: 5px;
+    ion-label{
+
+    }
+  }
+  .ip_address{
+    margin-top: 5px;
+    margin-left: 5px;
+    ion-label{
+
+    }
+  }
+  .passcode{
+    margin-top: 5px;
+    margin-left: 5px;
+    ion-label{
+
+    }
+  }
+  ion-button{
+    margin-right: 15px;
+    margin-left: 15px;
+    height: 60px;
+    width: 330px;
+  }
+}
+

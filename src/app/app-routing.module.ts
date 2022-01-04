@@ -24,6 +24,10 @@ const routes: Routes = [
     path: 'machine-status/:id',
     loadChildren: () => import('./machine/machine-status/machine-status.module').then( m => m.MachineStatusPageModule)
   },
+  {
+    path: 'settings/:id',
+    loadChildren: () => import('./settingpage/settings.module').then( m => m.SettingsPageModule)
+  },
 ];
 
 @NgModule({
