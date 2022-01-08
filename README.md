@@ -10,7 +10,7 @@
 
 ### Login page
 
-![Login Page](CGI_FLEX_Client/src/assets/Login.png)
+![Login Page](/src/assets/Login.png)
 
 ### Machine List
 
