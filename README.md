@@ -13,15 +13,16 @@
 
 
 
+
 ## Intallation
-> npm install
+```
+npm install
+```
 
 ## Start Application
-> ionic serve
-
-## Frontend - Client-side
-
-[GitHub - ElwinKim/CGI_FLEX_Client: Client app for CGI_FLEX app](https://github.com/ElwinKim/CGI_FLEX_Client)
+```
+ionic serve
+```
 
 ## Backend - RESTful API
 
