@@ -10,19 +10,19 @@
 
 ### Login page
 
-![Untitled](CSI%20Flex%20-%20Industrial%20machine%20status%20check%20Mobile%20%2016a66f855acc4fdab7f7b61197b127bc/Untitled.png)
+![Login Page](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1fe85b48-1322-4468-a717-3757f2a3fcae/Untitled.png)
 
 ### Machine List
 
-![Untitled](CSI%20Flex%20-%20Industrial%20machine%20status%20check%20Mobile%20%2016a66f855acc4fdab7f7b61197b127bc/Untitled%201.png)
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/73f010bd-8150-44e2-97d8-70d4bf50093d/Untitled.png)
 
 ### Machine Status page
 
-![Untitled](CSI%20Flex%20-%20Industrial%20machine%20status%20check%20Mobile%20%2016a66f855acc4fdab7f7b61197b127bc/Untitled%202.png)
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/900451ff-8806-46fd-a44d-ae498ef8ab49/Untitled.png)
 
 User Setting page
 
-![Untitled](CSI%20Flex%20-%20Industrial%20machine%20status%20check%20Mobile%20%2016a66f855acc4fdab7f7b61197b127bc/Untitled%203.png)
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/02483d09-a3fc-4113-8190-e87cd3199b06/Untitled.png)
 
 ## Source Code
 
