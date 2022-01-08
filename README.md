@@ -8,22 +8,10 @@
 - Angular 13
 - TypeScript
 
-### Login page
-<img src="/src/assets/Login.png"> <img src="/src/assets/Login.png"> <img src="/src/assets/Login.png"> <img src="/src/assets/Login.png">
+### Login page                     ### Machine List                       ### Machine Status page            ###User Setting page
+<img src="/src/assets/Login.png"> <img src="/src/assets/MachineList.png"> <img src="/src/assets/Status.png"> <img src="/src/assets/UserSetting.png">
 
-![Login Page](/src/assets/Login.png)
 
-### Machine List
-
-![Machine List](/src/assets/MachineList.png)
-
-### Machine Status page
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/900451ff-8806-46fd-a44d-ae498ef8ab49/Untitled.png)
-
-User Setting page
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/02483d09-a3fc-4113-8190-e87cd3199b06/Untitled.png)
 
 ## Source Code
 
