@@ -14,7 +14,7 @@
 
 ### Machine List
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/73f010bd-8150-44e2-97d8-70d4bf50093d/Untitled.png)
+![Machine List](/src/assets/MachineList.png)
 
 ### Machine Status page
 
