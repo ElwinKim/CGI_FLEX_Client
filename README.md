@@ -8,7 +8,7 @@
 - Angular 13
 - TypeScript
 
-### Login page-----------Machine List-----------Machine Status page-----------User Setting page
+### Login page-----------Machine List--------Machine Status page-------User Setting page
 <img src="/src/assets/Login.png" height="400px"> <img src="/src/assets/MachineList.png" height="400px"> <img src="/src/assets/Status.png" height="400px"> <img src="/src/assets/UserSetting.png" height="400px">
 
 
