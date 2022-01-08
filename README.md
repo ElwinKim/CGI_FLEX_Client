@@ -9,7 +9,7 @@
 - TypeScript
 
 ### Login page                     ### Machine List                       ### Machine Status page            ###User Setting page
-<img src="/src/assets/Login.png" height="250px"> <img src="/src/assets/MachineList.png"> <img src="/src/assets/Status.png"> <img src="/src/assets/UserSetting.png">
+<img src="/src/assets/Login.png" height="400px"> <img src="/src/assets/MachineList.png" height="400px"> <img src="/src/assets/Status.png" height="400px"> <img src="/src/assets/UserSetting.png" height="400px">
 
 
 
