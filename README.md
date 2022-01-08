@@ -1,9 +1,6 @@
 # CSI Flex - Industrial machine status check Mobile Application (Clone project)
 
 ### Used stacks
-
-- .NET5
-- ASP.NET core 5
 - Ionic framework 6
 - Angular 13
 - TypeScript
