@@ -13,7 +13,11 @@
 
 
 
-## Source Code
+## Intallation
+> npm install
+
+## Start Application
+> ionic serve
 
 ## Frontend - Client-side
 
