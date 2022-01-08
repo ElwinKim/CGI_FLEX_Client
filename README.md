@@ -10,7 +10,7 @@
 
 ### Login page
 
-![Login Page](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1fe85b48-1322-4468-a717-3757f2a3fcae/Untitled.png)
+![Login Page](CGI_FLEX_Client/src/assets/Login.png)
 
 ### Machine List
 
